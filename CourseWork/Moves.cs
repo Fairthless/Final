@@ -15,19 +15,19 @@ namespace CourseWork
 {
     class Moves
     {     
-        private  IWebDriver driver;
-        Moves() => this.driver = driver;
+     //   private  IWebDriver driver;
+     //   Moves() => this.driver = driver;
 
-       Actions action = new Actions(driver);
-        public void click() => action.Click();
+     ////  Actions action = new Actions(driver);
+     //   public void click() => action.Click();
 
-        public void keyArrowDown()
-        {
+     //   public void keyArrowDown()
+     //   {
 
-            if (Keyboard.IsKeyDown(Key.Down))
-                action.KeyDown(Keys.ArrowDown);
+     //       if (Keyboard.IsKeyDown(Key.Down))
+     //           action.KeyDown(Keys.ArrowDown);
 
 
-        }
+     //   }
     }
 }   

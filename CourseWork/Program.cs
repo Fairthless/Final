@@ -23,7 +23,9 @@ namespace CourseWork
             googleMapsInit.clickGlobeMod();
             googleMapsInit.clickThirdDeminsion();
             googleMapsInit.check();
-            Moves moves = new Moves(driver);
+            InputCoordinates inputCoordinates = new InputCoordinates();
+            inputCoordinates.openFile();
+       //     Moves moves = new Moves(driver);
         }
     }
 }

@@ -21,9 +21,9 @@ namespace CourseWork
       
         public void check()
         {
-            Dictionary<string, int> pa = new Dictionary<string, int>();
-            pa.Add("12", 23);
-            Console.WriteLine(pa.Count);
+      //     Dictionary<string, int> pa = new Dictionary<string, int>();
+        //    pa.Add("12", 23);
+          //  Console.WriteLine(pa.Count);
         }
         public void clickSatellite()
         {
