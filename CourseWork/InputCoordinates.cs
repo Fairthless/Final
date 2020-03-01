@@ -4,12 +4,12 @@ using System.IO;
 
 namespace CourseWork
 {
-   public  class InputCoordinates
+    public class InputCoordinates
     {
-        private IWebDriver webDriver;
+        private IWebDriver _webDriver;
         public string coordinate;
-        
-        public string openFile()
+
+        public string OpenFile()
         {
             using (FileStream fs = File.OpenRead("test.txt"))
             {
@@ -20,14 +20,14 @@ namespace CourseWork
                     string coordinate = System.Text.Encoding.Default.GetString(array);
                     Console.WriteLine($"Text is {coordinate}");
                 }
-               else 
-                Console.WriteLine("File is not found");
+                else
+                    Console.WriteLine("File is not found");
                 return coordinate;
 
             }
 
         }
-        public void useCoordinates()
+        public void UseCoordinates()
         {
 
         }

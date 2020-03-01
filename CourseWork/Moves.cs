@@ -1,33 +1,22 @@
 ﻿
-
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 using System.Windows.Input;
 
 namespace CourseWork
 {
-    class Moves
-    {     
-     //   private  IWebDriver driver;
-     //   Moves() => this.driver = driver;
+   public class Moves
+    {
+        private IWebDriver _driver;
+        private Actions _actions;
+      public Moves(IWebDriver driver) => this._driver = _driver;
 
-     ////  Actions action = new Actions(driver);
-     //   public void click() => action.Click();
+        public void KeyArrowDown()
+        {
 
-     //   public void keyArrowDown()
-     //   {
+          //  if (Keyboard.IsKeyDown(Key.Down))
+                _actions.KeyDown(Keys.ArrowDown);
 
-     //       if (Keyboard.IsKeyDown(Key.Down))
-     //           action.KeyDown(Keys.ArrowDown);
-
-
-     //   }
+        }
     }
-}   
+}
