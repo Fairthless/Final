@@ -1,22 +1,38 @@
 ﻿
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using System.Windows.Input;
+using OpenQA.Selenium.Support.UI;
+using System.Collections.Generic;
+using System.Threading;
 
 namespace CourseWork
 {
-   public class Moves
+    public class Moves
     {
-        private IWebDriver _driver;
-        private Actions _actions;
-      public Moves(IWebDriver driver) => this._driver = _driver;
-
-        public void KeyArrowDown()
+        IWebDriver _driver;
+        By _searchString = By.XPath("//input[@autofocus='autofocus']");
+        By _searchButton = By.XPath("//button[@guidedhelpid='searchbutton']");
+        By _check = By.XPath("//div[@role='main']");
+        public Moves(IWebDriver driver)
         {
-
-          //  if (Keyboard.IsKeyDown(Key.Down))
-                _actions.KeyDown(Keys.ArrowDown);
-
+            _driver = driver;
         }
+        public void MoveToCoordinate(List<string> listOfCoordinates)
+        {
+            WebDriverWait wait = new WebDriverWait(_driver, System.TimeSpan.FromSeconds(15));
+            IWebElement SearchString = wait.Until(ExpectedConditions.ElementToBeClickable(_searchString));
+            IWebElement searchButton = wait.Until(ExpectedConditions.ElementToBeClickable(_searchButton));
+
+            foreach (var coord in listOfCoordinates)
+            {
+                SearchString.Clear();
+                SearchString.SendKeys(coord);
+                searchButton.Click();
+                IWebElement check = wait.Until(ExpectedConditions.ElementToBeClickable(_check));
+                check.Click();
+                new GoogleMainPage(_driver).ClickThirdDeminsion();
+                Thread.Sleep(7000);
+            }
+        }
+
     }
 }
